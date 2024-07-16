@@ -69,7 +69,6 @@ nav {
     font-size: 16px;
     line-height: 22px;
     text-align: left;
-    margin-top: 2rem;
 }
 
 .header {
@@ -162,7 +161,7 @@ nav a:first-of-type {
 .burger-menu.open {
     position: absolute;
     right: 13px;
-    z-index: 10;
+    z-index: 100;
 }
 
 nav.open {
@@ -172,7 +171,10 @@ nav.open {
     color: yellow;
     height: 100vh;
     z-index: 12;
+    top: 0;
 }
+
+
 
 @media (max-width: 768px) {
     .burger-menu {
@@ -182,7 +184,7 @@ nav.open {
     nav {
         display: none;
         position: absolute;
-        padding-top: 64px;
+        padding-top: 110px;
         left: 0;
         width: 100%;
         background-color: var(--vt-c-black);
@@ -197,33 +199,6 @@ nav.open {
 
     nav a:nth-child(2) {
         padding: 27px 0px 27px 23px;
-    }
-}
-
-@media (min-width: 1024px) {
-    header {
-        display: flex;
-        place-items: center;
-        padding-right: calc(var(--section-gap) / 2);
-    }
-
-    .logo {
-        margin: 0 2rem 0 0;
-    }
-
-    header .wrapper {
-        display: flex;
-        place-items: flex-start;
-        flex-wrap: wrap;
-    }
-
-    nav {
-        text-align: left;
-        margin-left: -1rem;
-        font-size: 1rem;
-
-        padding: 1rem 0;
-        margin-top: 1rem;
     }
 }
 </style>

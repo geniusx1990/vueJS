@@ -48,6 +48,7 @@ export default defineComponent({
   <div class="hero">
     <p class="hero__title">Пройдите точный и быстрый</p>
     <h1 class="hero__header">ТЕСТ НА<br> ОПРЕДЕЛЕНИЕ<br>IQ</h1>
+    <img src="../assets/brain.svg" alt="brain" width="252px">
     <MyButton title="ПРОЙТИ ТЕСТ" backgroundColor="#FFC700" colorText="#0D0C11" borderLine="none" />
     <p ref="subtitle" class="hero__subtitle">
       И получите рекомендации<br>
@@ -66,8 +67,7 @@ export default defineComponent({
 .hero {
   width: 100%;
   height: 647px;
-  background-image: url('../assets/rain_bk.png');
-  position: absolute;
+  background-image: url('../assets/game_background.png');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -95,7 +95,6 @@ export default defineComponent({
   color: var(--vt-c-yellow_second);
   margin-top: 40px;
   text-align: center;
-  margin-bottom: 150px;
 }
 
 
