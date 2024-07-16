@@ -39,7 +39,7 @@ const isStartPage = computed(() => route.path === '/start')
     align-items: center;
     position: absolute;
     top: 0;
-    left: 48px;
+    left: 50%;
     z-index: 2;
 }
 
@@ -174,11 +174,20 @@ nav.open {
     top: 0;
 }
 
+@media (max-width: 1014px) {
+    .header__test_title_container {
+        left: 70%;
+    }
+}
 
 
 @media (max-width: 768px) {
     .burger-menu {
         display: flex;
+    }
+
+    .header__test_title_container {
+        left: 48px;
     }
 
     nav {

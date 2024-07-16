@@ -7,14 +7,7 @@
 </template>
 
 <style>
-.start {
-    /*     background-image: url('../assets/game_background.png');
- */
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
+.start {}
 
 
 @media (min-width: 1024px) {}

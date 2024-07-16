@@ -11,6 +11,7 @@
 
 <style scoped>
 .mybutton {
+    cursor: pointer;
     position: relative;
     width: 16px;
     height: 16px;

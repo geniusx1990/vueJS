@@ -31,7 +31,8 @@ export default defineComponent({
 </template>
 
 <style scoped>
-.section_tree {
+.section_four {
+    width: 100%;
     background-image: url('../assets/section_four.png');
     background-repeat: no-repeat;
     background-size: cover;

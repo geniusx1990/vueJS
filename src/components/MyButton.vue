@@ -17,6 +17,7 @@ defineProps<{
 
 <style scoped>
 .mybutton {
+    cursor: pointer;
     width: 189px;
     height: 41px;
     font-family: Merriweather;

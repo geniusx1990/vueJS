@@ -1,6 +1,5 @@
 <script lang="ts">
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
-import { getImgUrl } from '@/utils/getImage';
 import MyButton from '../components/MyButton.vue';
 import MyButtonMore from '../components/MyButtonMore.vue';
 
