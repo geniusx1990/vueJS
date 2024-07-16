@@ -1,0 +1,197 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const isOpen = ref(false)
+
+const toggleMenu = () => {
+    isOpen.value = !isOpen.value
+}
+</script>
+
+<template>
+    <header class="header">
+        <div class="wrapper">
+            <div class="burger-menu" :class="{ open: isOpen }" @click="toggleMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav :class="{ open: isOpen }">
+                <RouterLink to="/">ГЛАВНАЯ</RouterLink>
+                <RouterLink to="/about">ИНФОРМАЦИЯ О ТЕСТЕ</RouterLink>
+                <RouterLink to="/start">ПРОЙТИ ТЕСТ</RouterLink>
+            </nav>
+        </div>
+    </header>
+</template>
+
+<style scoped>
+header {
+    line-height: 1.5;
+    max-height: 100vh;
+}
+
+nav {
+    width: 100%;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.header {
+    background-color: var(--vt-c-black);
+    padding: 17px 0px 13px 15px;
+    margin: 0;
+    height: 49px;
+    /*   box-shadow: 0px 4px 4px 0px #00000040;
+ */
+}
+
+nav a.router-link-exact-active {
+    color: var(--vt-c-yellow);
+}
+
+nav a.router-link-exact-active:hover {
+    background-color: transparent;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--vt-c-white);
+    padding: 0 23px;
+    border-left: 1px solid var(--color-border);
+}
+
+nav a:first-of-type {
+    border: 0;
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    width: 24px;
+    height: 16px;
+}
+
+.burger-menu span {
+    position: absolute;
+    height: 2.67px;
+    width: 100%;
+    background: var(--vt-c-gray);
+    transition:
+        transform 0.3s,
+        opacity 0.3s;
+}
+
+.burger-menu span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--vt-c-gray_white);
+    opacity: 0.3;
+}
+
+.burger-menu span:nth-child(1) {
+    top: 0;
+}
+
+.burger-menu span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-menu span:nth-child(3) {
+    bottom: 0;
+}
+
+.burger-menu.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(9px);
+    background-color: var(--vt-c-yellow_second);
+    width: 28px;
+}
+
+.burger-menu.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+    background-color: var(--vt-c-yellow_second);
+    width: 28px;
+}
+
+.burger-menu.open {
+    position: absolute;
+    right: 13px;
+    z-index: 10;
+}
+
+nav.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: yellow;
+    height: 100vh;
+    z-index: 12;
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        padding-top: 64px;
+        left: 0;
+        width: 100%;
+        background-color: var(--vt-c-black);
+    }
+
+    nav a {
+        display: block;
+        border: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    nav a:nth-child(2) {
+        padding: 27px 0px 27px 23px;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        display: flex;
+        place-items: center;
+        padding-right: calc(var(--section-gap) / 2);
+    }
+
+    .logo {
+        margin: 0 2rem 0 0;
+    }
+
+    header .wrapper {
+        display: flex;
+        place-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        text-align: left;
+        margin-left: -1rem;
+        font-size: 1rem;
+
+        padding: 1rem 0;
+        margin-top: 1rem;
+    }
+}
+</style>
