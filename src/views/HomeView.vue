@@ -2,6 +2,7 @@
 import SectionTwo from '@/components/SectionTwo.vue';
 import SectionOne from '../components/SectionOne.vue'
 import SectionThree from '../components/SectionThree.vue'
+import SectionFour from '../components/SectionFour.vue'
 
 </script>
 
@@ -10,6 +11,7 @@ import SectionThree from '../components/SectionThree.vue'
     <SectionOne />
     <SectionTwo />
     <SectionThree />
+    <SectionFour />
   </div>
 </template>
 

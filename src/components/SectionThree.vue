@@ -21,7 +21,7 @@ export default defineComponent({
                 которая принесет вам скорейший финансовый результат.
             </p>
             <img src="../assets/brain_section_tree.svg" alt="brain">
-            <MyButton title="ПРОЙТИ ТЕСТ" />
+            <MyButton title="ПРОЙТИ ТЕСТ" backgroundColor="#FFC700" colorText="#0D0C11" borderLine="none" />
         </div>
     </div>
 </template>

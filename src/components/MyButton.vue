@@ -2,12 +2,15 @@
 
 defineProps<{
     title: string
+    backgroundColor: string
+    colorText: string
+    borderLine: string
 }>()
 
 </script>
 
 <template>
-    <button class="mybutton">
+    <button class="mybutton" :style="{ backgroundColor: backgroundColor, color: colorText, border: borderLine }">
         {{ title }}
     </button>
 </template>
@@ -22,10 +25,7 @@ defineProps<{
     letter-spacing: 10%;
     text-align: center;
     padding: 13.05px 17.01px;
-    background-color: var(--vt-c-yellow_second);
     border-radius: 20px;
-    color: #0D0C11;
-    border: none;
     font-weight: 700;
 }
 </style>

@@ -48,7 +48,7 @@ export default defineComponent({
   <div class="hero">
     <p class="hero__title">Пройдите точный и быстрый</p>
     <h1 class="hero__header">ТЕСТ НА<br> ОПРЕДЕЛЕНИЕ<br>IQ</h1>
-    <MyButton title="ПРОЙТИ ТЕСТ" />
+    <MyButton title="ПРОЙТИ ТЕСТ" backgroundColor="#FFC700" colorText="#0D0C11" borderLine="none" />
     <p ref="subtitle" class="hero__subtitle">
       И получите рекомендации<br>
       по развитию своего интеллекта<br>
