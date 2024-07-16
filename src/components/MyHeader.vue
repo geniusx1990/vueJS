@@ -1,16 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useRoute } from 'vue-router';
 
 const isOpen = ref(false)
+const route = useRoute()
 
 const toggleMenu = () => {
     isOpen.value = !isOpen.value
 }
+const isStartPage = computed(() => route.path === '/start')
+
 </script>
 
 <template>
     <header class="header">
-        <div class="header__test_title_container">
+        <div v-if="isStartPage" class="header__test_title_container" :class="{ open: isOpen }" @click="toggleMenu">
             <img src="../assets/brain.svg" alt="brain" width="48px" height="47px">
             <h1 class="header__title">ТЕСТ НА ОПРЕДЕЛЕНИЕ IQ</h1>
         </div>
@@ -36,6 +40,11 @@ const toggleMenu = () => {
     position: absolute;
     top: 0;
     left: 48px;
+    z-index: 2;
+}
+
+.header__test_title_container.open {
+    display: none;
 }
 
 .header__title {
