@@ -10,6 +10,10 @@ const toggleMenu = () => {
 
 <template>
     <header class="header">
+        <div class="header__test_title_container">
+            <img src="../assets/brain.svg" alt="brain" width="48px" height="47px">
+            <h1 class="header__title">ТЕСТ НА ОПРЕДЕЛЕНИЕ IQ</h1>
+        </div>
         <div class="wrapper">
             <div class="burger-menu" :class="{ open: isOpen }" @click="toggleMenu">
                 <span></span>
@@ -26,6 +30,25 @@ const toggleMenu = () => {
 </template>
 
 <style scoped>
+.header__test_title_container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 48px;
+}
+
+.header__title {
+    font-family: Yeseva One;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 13.86px;
+    letter-spacing: 5%;
+    margin-left: 9px;
+    color: var(--vt-c-yellow_second);
+}
+
+
 header {
     line-height: 1.5;
     max-height: 100vh;
