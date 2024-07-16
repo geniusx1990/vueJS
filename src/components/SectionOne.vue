@@ -65,7 +65,7 @@ export default defineComponent({
 <style scoped>
 .hero {
   width: 100%;
-  height: 100vh;
+  height: 647px;
   background-image: url('../assets/rain_bk.png');
   position: absolute;
   background-repeat: no-repeat;
