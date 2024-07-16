@@ -2,9 +2,12 @@
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
 import { getImgUrl } from '@/utils/getImage';
 import MyButton from '../components/MyButton.vue';
+import MyButtonMore from '../components/MyButtonMore.vue';
+
 export default defineComponent({
   components: {
-    MyButton
+    MyButton,
+    MyButtonMore
   },
   setup() {
     const subtitle = ref<HTMLParagraphElement | null>(null);
@@ -49,9 +52,13 @@ export default defineComponent({
     <p ref="subtitle" class="hero__subtitle">
       И получите рекомендации<br>
       по развитию своего интеллекта<br>
-      и улучшению финансового<br>
-      благосостояния и личной жизни
+      <span class="yellow-text">и улучшению финансового<br>
+        благосостояния и личной жизни</span>
     </p>
+    <div class="hero__button">
+      <MyButtonMore />
+      <p class="hero__button_more">Подробнее</p>
+    </div>
   </div>
 </template>
 
@@ -100,9 +107,25 @@ export default defineComponent({
   line-height: 23.29px;
   color: var(--vt-c-white);
   text-align: center;
-  margin-bottom: 150px;
+  margin-bottom: 11px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.yellow-text {
+  color: var(--vt-c-yellow_second)
+}
+
+.hero__button {
+  text-align: center;
+}
+
+.hero__button_more {
+  font-family: 'PT Serif', serif;
+  font-size: 8px;
+  line-height: 10.35px;
+  text-align: center;
+  color: var(--vt-c-white);
 }
 </style>
