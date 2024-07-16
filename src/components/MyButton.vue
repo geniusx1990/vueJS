@@ -26,5 +26,6 @@ defineProps<{
     border-radius: 20px;
     color: #0D0C11;
     border: none;
+    font-weight: 700;
 }
 </style>
