@@ -8,6 +8,12 @@ const route = useRoute()
 const toggleMenu = () => {
     isOpen.value = !isOpen.value
 }
+
+const closeMenu = () => {
+    isOpen.value = false
+}
+
+
 const isStartPage = computed(() => route.path === '/start')
 const isFinishedPage = computed(() => route.path === '/finish')
 
@@ -19,8 +25,7 @@ const headerTitle = computed(() =>
 
 <template>
     <header class="header">
-        <div v-if="isStartPage || isFinishedPage" class="header__test_title_container" :class="{ open: isOpen }"
-            @click="toggleMenu">
+        <div v-if="isStartPage || isFinishedPage" class="header__test_title_container" :class="{ open: isOpen }">
             <img src="../assets/brain.svg" alt="brain" width="48px" height="47px">
             <h1 class="header__title">{{ headerTitle }}</h1>
         </div>
@@ -31,10 +36,10 @@ const headerTitle = computed(() =>
                 <span></span>
             </div>
             <nav :class="{ open: isOpen }">
-                <RouterLink to="/" @click="toggleMenu" class="nav-link" active-class="active">ГЛАВНАЯ</RouterLink>
-                <RouterLink :to="{ path: '/', hash: '#more' }" @click="toggleMenu" class="nav-link">ИНФОРМАЦИЯ О ТЕСТЕ
-                </RouterLink>
-                <RouterLink to="/start" @click="toggleMenu" class="nav-link" active-class="active">ПРОЙТИ ТЕСТ
+                <RouterLink to="/" class="nav-link" active-class="active" @click="closeMenu">ГЛАВНАЯ</RouterLink>
+                <RouterLink :to="{ path: '/', hash: '#more' }" class="nav-link" @click="closeMenu">ИНФОРМАЦИЯ О
+                    ТЕСТЕ</RouterLink>
+                <RouterLink to="/start" class="nav-link" active-class="active" @click="closeMenu">ПРОЙТИ ТЕСТ
                 </RouterLink>
             </nav>
         </div>
