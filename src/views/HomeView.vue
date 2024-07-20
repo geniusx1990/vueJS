@@ -9,7 +9,7 @@ import SectionFour from '../components/SectionFour.vue'
 <template>
   <div class="home">
     <SectionOne />
-    <SectionTwo />
+    <SectionTwo id="more" />
     <SectionThree />
     <SectionFour />
   </div>

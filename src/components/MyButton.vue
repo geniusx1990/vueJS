@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
 
 defineProps<{
     title: string
@@ -6,11 +8,16 @@ defineProps<{
     colorText: string
     borderLine: string
 }>()
+const router = useRouter();
 
+function redirect() {
+    router.push('/start')
+}
 </script>
 
 <template>
-    <button class="mybutton" :style="{ backgroundColor: backgroundColor, color: colorText, border: borderLine }">
+    <button class="mybutton" :style="{ backgroundColor: backgroundColor, color: colorText, border: borderLine }"
+        @click="redirect">
         {{ title }}
     </button>
 </template>

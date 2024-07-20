@@ -1,13 +1,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import MyButton from '../components/MyButton.vue';
-import { getImgUrl } from '@/utils/getImage';
 
 export default defineComponent({
-    components: {
-/*         MyButton,
- */    }
 });
+
 </script>
 
 <template>

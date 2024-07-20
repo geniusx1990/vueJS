@@ -1,10 +1,16 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 
 
+const router = useRouter();
+
+function redirect() {
+    router.push('/#more')
+}
 </script>
 
 <template>
-    <button class="mybutton">
+    <button class="mybutton" @click="redirect">
         <img class="arrow_icon" src="../assets/arrow_icon.svg" alt="test">
     </button>
 </template>

@@ -9,11 +9,6 @@ const router = createRouter({
       component: () => import('../views/HomeView.vue')
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
-    },
-    {
       path: '/start',
       name: 'start',
       component: () => import('../views/StartView.vue')
@@ -23,7 +18,16 @@ const router = createRouter({
       name: 'finish',
       component: () => import('../views/FinishView.vue')
     }
-  ]
+  ],
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth'
+      }
+    }
+    return { top: 0 }
+  }
 })
 
 export default router

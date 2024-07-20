@@ -31,9 +31,11 @@ const headerTitle = computed(() =>
                 <span></span>
             </div>
             <nav :class="{ open: isOpen }">
-                <RouterLink to="/">ГЛАВНАЯ</RouterLink>
-                <RouterLink to="/about">ИНФОРМАЦИЯ О ТЕСТЕ</RouterLink>
-                <RouterLink to="/start">ПРОЙТИ ТЕСТ</RouterLink>
+                <RouterLink to="/" @click="toggleMenu" class="nav-link" active-class="active">ГЛАВНАЯ</RouterLink>
+                <RouterLink :to="{ path: '/', hash: '#more' }" @click="toggleMenu" class="nav-link">ИНФОРМАЦИЯ О ТЕСТЕ
+                </RouterLink>
+                <RouterLink to="/start" @click="toggleMenu" class="nav-link" active-class="active">ПРОЙТИ ТЕСТ
+                </RouterLink>
             </nav>
         </div>
     </header>
@@ -58,7 +60,7 @@ const headerTitle = computed(() =>
     font-size: 12px;
     font-weight: 700;
     line-height: 13.86px;
-    letter-spacing: 5%;
+    letter-spacing: 0.05em;
     margin-left: 9px;
     color: var(--vt-c-yellow_second);
 }
@@ -81,14 +83,12 @@ nav {
     background-color: var(--vt-c-black);
     padding: 17px 0px 13px 15px;
     margin: 0;
-    height: 49px;
-    /*   box-shadow: 0px 4px 4px 0px #00000040;
- */
 }
 
-nav a.router-link-exact-active {
+nav a.active {
     color: var(--vt-c-yellow);
 }
+
 
 nav a.router-link-exact-active:hover {
     background-color: transparent;
@@ -178,6 +178,10 @@ nav.open {
     height: 100vh;
     z-index: 12;
     top: 0;
+}
+
+.none {
+    color: #fff;
 }
 
 @media (max-width: 1014px) {
