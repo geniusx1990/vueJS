@@ -33,8 +33,8 @@ function isNumber(value: string) {
     <p class="question__title">{{ props.question.question }}</p>
     <img v-if="IMAGESOURCE" :src="IMAGESOURCE" alt="test" class="question__image">
     <div v-if="props.question.type === 'text'" class="answers">
-        <div class="answer" v-for="(option, index) in props.question.options" :key="index"
-            @click="selectOption(option)">
+        <div class="answer" v-for="(option, index) in props.question.options" :key="index" @click="selectOption(option)"
+            :class="{ 'selected': selectedOption === option }">
             <input type="radio" :id="option" :value="option" v-model="selectedOption" @change="selectOption(option)" />
             <label class="question__label" :for="option">{{ option }}</label>
         </div>
@@ -42,7 +42,8 @@ function isNumber(value: string) {
     <div v-else-if="props.question.type === 'color'" class="color-boxes">
         <div class="answer color-box" v-for="(option, index) in props.question.options" :key="index"
             @click="selectOption(option)"
-            :style="{ backgroundColor: option, borderColor: selectedOption == option ? '#FFC700' : 'transparent' }">
+            :style="{ backgroundColor: option, borderColor: selectedOption == option ? '#FFC700' : 'transparent' }"
+            :class="{ 'selected': selectedOption === option }">
             <input type="radio" :id="option" :value="option" v-model="selectedOption" @change="selectOption(option)"
                 class="hidden-input" />
             <label class="question__label" :for="option"></label>
@@ -50,8 +51,8 @@ function isNumber(value: string) {
     </div>
     <div v-else-if="props.question.type === 'numbers'" class="number-boxes">
         <div class="answer number-box" v-for="(option, index) in props.question.options" :key="index"
-            @click="selectOption(option)"
-            :style="{ borderColor: selectedOption == option ? '#FFC700' : 'transparent' }">
+            @click="selectOption(option)" :style="{ borderColor: selectedOption == option ? '#FFC700' : 'transparent' }"
+            :class="{ 'selected': selectedOption === option }">
             <input type="radio" :id="option" :value="option" v-model="selectedOption" @change="selectOption(option)"
                 class="hidden-input" />
             <label class="question__label_black" :for="option">{{ option }}</label>
@@ -60,16 +61,10 @@ function isNumber(value: string) {
     <button class="next__button" @click="submitAnswer" :disabled="!selectedOption">ДАЛЕЕ</button>
 </template>
 
-
 <style scoped>
 .number-boxes {
     display: flex;
     gap: 0.5em;
-    /*     padding-left: 17px;
-    padding-right: 17px;
-    width: 100%;
-    justify-content: space-around;
- */
 }
 
 .question__label {
@@ -150,16 +145,14 @@ function isNumber(value: string) {
     display: none;
 }
 
-
-
-
-
 .question__title {
     font-family: PT Serif;
     font-size: 20px;
     line-height: 25.88px;
     letter-spacing: 0.05em;
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .answer {
@@ -177,6 +170,10 @@ function isNumber(value: string) {
     background-color: var(--vt-c-yellow_second);
 }
 
+.answer.selected {
+    background-color: #FFC700;
+}
+
 input[type="radio"] {
     appearance: none;
     width: 20px;
@@ -191,7 +188,6 @@ input[type="radio"]:checked {
     border-color: #272727;
     background-color: #2950C2;
 }
-
 
 button {
     font-family: Merriweather;

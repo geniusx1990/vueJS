@@ -21,13 +21,18 @@ const headerTitle = computed(() =>
     isFinishedPage.value ? 'ГОТОВО!' : 'ТЕСТ НА ОПРЕДЕЛЕНИЕ IQ'
 );
 
+const headerTitleClass = computed(() =>
+    isFinishedPage.value ? 'header__title--finished' : 'header__title--default'
+);
+
+
 </script>
 
 <template>
     <header class="header">
         <div v-if="isStartPage || isFinishedPage" class="header__test_title_container" :class="{ open: isOpen }">
             <img src="../assets/brain.svg" alt="brain" width="48px" height="47px">
-            <h1 class="header__title">{{ headerTitle }}</h1>
+            <h1 :class="['header__title', headerTitleClass]">{{ headerTitle }}</h1>
         </div>
         <div class="wrapper">
             <div class="burger-menu" :class="{ open: isOpen }" @click="toggleMenu">
@@ -185,8 +190,13 @@ nav.open {
     top: 0;
 }
 
-.none {
-    color: #fff;
+.header__title--finished {
+    background-color: red;
+    margin-left: 24px;
+    font-size: 20px;
+    line-height: 23.1px;
+    letter-spacing: 0.1em;
+
 }
 
 @media (max-width: 1014px) {
