@@ -9,14 +9,20 @@ const toggleMenu = () => {
     isOpen.value = !isOpen.value
 }
 const isStartPage = computed(() => route.path === '/start')
+const isFinishedPage = computed(() => route.path === '/finish')
+
+const headerTitle = computed(() =>
+    isFinishedPage.value ? 'ГОТОВО!' : 'ТЕСТ НА ОПРЕДЕЛЕНИЕ IQ'
+);
 
 </script>
 
 <template>
     <header class="header">
-        <div v-if="isStartPage" class="header__test_title_container" :class="{ open: isOpen }" @click="toggleMenu">
+        <div v-if="isStartPage || isFinishedPage" class="header__test_title_container" :class="{ open: isOpen }"
+            @click="toggleMenu">
             <img src="../assets/brain.svg" alt="brain" width="48px" height="47px">
-            <h1 class="header__title">ТЕСТ НА ОПРЕДЕЛЕНИЕ IQ</h1>
+            <h1 class="header__title">{{ headerTitle }}</h1>
         </div>
         <div class="wrapper">
             <div class="burger-menu" :class="{ open: isOpen }" @click="toggleMenu">
