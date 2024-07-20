@@ -23,7 +23,7 @@ defineProps<{
     font-family: Merriweather;
     font-size: 14px;
     line-height: 17.6px;
-    letter-spacing: 10%;
+    letter-spacing: 0.1em;
     text-align: center;
     padding: 13.05px 17.01px;
     border-radius: 20px;

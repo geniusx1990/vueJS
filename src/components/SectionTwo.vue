@@ -55,6 +55,7 @@ export default defineComponent({
     text-align: center;
     line-height: 23px;
     color: var(--vt-c-white);
-    letter-spacing: 5%;
+    letter-spacing: 0.05em;
+    font-weight: 700;
 }
 </style>

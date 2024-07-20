@@ -47,7 +47,7 @@ export default defineComponent({
   <div class="hero">
     <p class="hero__title">Пройдите точный и быстрый</p>
     <h1 class="hero__header">ТЕСТ НА<br> ОПРЕДЕЛЕНИЕ<br>IQ</h1>
-    <img src="../assets/brain.svg" alt="brain" width="252px">
+    <img src="../assets/brain.svg" alt="brain" width="200px">
     <MyButton title="ПРОЙТИ ТЕСТ" backgroundColor="#FFC700" colorText="#0D0C11" borderLine="none" />
     <p ref="subtitle" class="hero__subtitle">
       И получите рекомендации<br>
@@ -65,7 +65,6 @@ export default defineComponent({
 <style scoped>
 .hero {
   width: 100%;
-  height: 647px;
   background-image: url('../assets/game_background.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -78,7 +77,7 @@ export default defineComponent({
 
 .hero__title {
   font-family: PT Serif;
-  letter-spacing: 5%;
+  letter-spacing: 0.05em;
   font-size: 18px;
   line-height: 23.29px;
   color: var(--vt-c-white);
@@ -88,8 +87,9 @@ export default defineComponent({
 
 .hero__header {
   font-family: Yeseva One;
-  letter-spacing: 5%;
+  letter-spacing: 0.03em;
   font-size: 30px;
+  font-weight: 700;
   line-height: 34.65px;
   color: var(--vt-c-yellow_second);
   margin-top: 40px;
@@ -99,10 +99,10 @@ export default defineComponent({
 
 .hero__subtitle {
   margin-top: 22px;
-  font-family: 'PT Serif', serif;
-  letter-spacing: 5%;
+  font-family: PT Serif;
+  letter-spacing: 0.05em;
   font-size: 15px;
-  line-height: 23.29px;
+  line-height: 19px;
   color: var(--vt-c-white);
   text-align: center;
   margin-bottom: 11px;
@@ -120,10 +120,12 @@ export default defineComponent({
 }
 
 .hero__button_more {
-  font-family: 'PT Serif', serif;
+  font-family: PT Serif;
   font-size: 8px;
   line-height: 10.35px;
+  letter-spacing: 0.05em;
   text-align: center;
   color: var(--vt-c-white);
+  margin-bottom: 11px;
 }
 </style>

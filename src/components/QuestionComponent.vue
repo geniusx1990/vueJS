@@ -30,7 +30,7 @@ function isNumber(value: string) {
 </script>
 
 <template>
-    <p class="question">{{ props.question.question }}</p>
+    <p class="question__title">{{ props.question.question }}</p>
     <img v-if="IMAGESOURCE" :src="IMAGESOURCE" alt="test" class="question__image">
     <div v-if="props.question.type === 'text'" class="answers">
         <div class="answer" v-for="(option, index) in props.question.options" :key="index"
@@ -75,6 +75,11 @@ function isNumber(value: string) {
 .question__label {
     display: block;
     width: 80%;
+    font-family: PT Serif;
+    font-size: 18px;
+    line-height: 58px;
+    letter-spacing: 0.05em;
+    text-align: left;
 }
 
 .question__label_black {
@@ -149,7 +154,11 @@ function isNumber(value: string) {
 
 
 
-.question {
+.question__title {
+    font-family: PT Serif;
+    font-size: 20px;
+    line-height: 25.88px;
+    letter-spacing: 0.05em;
     text-align: center;
 }
 
@@ -161,9 +170,6 @@ function isNumber(value: string) {
     background-color: #F2F3F326;
     margin-bottom: 8px;
     transition: background-color 0.3s ease;
-    font-size: 18px;
-    line-height: 58px;
-    letter-spacing: 0.05em;
     padding-left: 35px;
 }
 

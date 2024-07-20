@@ -15,11 +15,11 @@ export default defineComponent({
             <img class="lightning_left" src="../assets/lightning_left.svg" alt="lightning">
             <img class="lightning_right" src="../assets/lightning_right.svg" alt="lightning">
             <p class="section_four__container__text">Прохождение теста займет у вас не более <span
-                    class="lower-case-yellow">12 минут</span>, а его результаты
-                вы сможете использовать всю жизнь.</p>
+                    class="lower-case-yellow">12 минут</span>, а его <span class="white__bold">результаты</span>
+                вы сможете <span class="lower-case-yellow">использовать всю жизнь.</span></p>
             <div class="section_four__container__rectangle">
-                <p class="section_four__container__rectangle__content">Профессиональная интерпретация и детально
-                    <span class="lower-case">проработанные рекомендации</span> позволят вам качественно
+                <p class="section_four__container__rectangle__content">Профессиональная<br> интерпретация и детально
+                    <span class="lower-case">проработанные<br> рекомендации</span> позволят вам качественно
                     <span class="lower-case">изменить все аспекты своей жизни:</span> от финансового до любовного.
                 </p>
             </div>
@@ -59,6 +59,7 @@ export default defineComponent({
     font-family: Merriweather;
     font-size: 16px;
     line-height: 23px;
+    letter-spacing: 0.05em;
     color: var(--vt-c-black);
 }
 
@@ -72,11 +73,19 @@ export default defineComponent({
     font-weight: 700;
 }
 
+.white__bold {
+    font-weight: 700;
+
+}
+
 .section_four__container__text {
     font-family: Merriweather;
     font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
     color: var(--vt-c-white);
     margin-bottom: 14px;
+    padding-right: 70px;
 }
 
 .copyright {

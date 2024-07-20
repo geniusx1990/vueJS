@@ -12,12 +12,12 @@ export default defineComponent({
 <template>
     <div class="section_tree">
         <div class="section_tree__container">
-            <p class="section_tree__container__text">Также по результатам теста
+            <p class="section_tree__container__text">Также по результатам теста<br>
                 <span class="bold-content">вы получите</span> подробные <span class="bold-content">советы</span> по
-                определению наиболее перспективной <span class="bold-content">для
+                определению наиболее<br> перспективной <span class="bold-content">для
                     вашего типа
                     <span class="lower-case">интеллекта</span> сферы
-                    деятельности,</span>
+                    деятельности,<br></span>
                 которая принесет вам скорейший финансовый результат.
             </p>
             <img src="../assets/brain_section_tree.svg" alt="brain">
@@ -42,10 +42,10 @@ export default defineComponent({
 }
 
 .section_tree__container__text {
-    font-family: 'PT Serif', serif;
+    font-family: PT Serif;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 5%;
+    letter-spacing: 0.05em;
     color: var(--vt-c-black-section-three);
     margin-bottom: 38px;
 }
