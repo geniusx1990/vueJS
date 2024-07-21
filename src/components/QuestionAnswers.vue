@@ -47,7 +47,7 @@ const handleSelected = (value: string) => {
 }
 
 .color-boxes {
-    padding: 20px 26px 23px 26px;
+    padding: 0px 26px 0px 26px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

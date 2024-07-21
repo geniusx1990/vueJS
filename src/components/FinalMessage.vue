@@ -83,7 +83,9 @@ const fetchPerson = async () => {
 <style scoped>
 .done-container {
     padding: 18px 14px 0px 15px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
 
 .done-container__title {

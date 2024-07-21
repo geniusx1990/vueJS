@@ -40,6 +40,7 @@ const handleSelected = (value: string) => {
     selectedOption.value = value;
     console.log('Selected value:', value);
 };
+
 </script>
 
 <template>
@@ -51,6 +52,7 @@ const handleSelected = (value: string) => {
         <QuestionImage :currentQuestion="currentQuestion" />
         <QuestionAnswers :options="currentQuestion.options" @update:selected="handleSelected"
             :type="currentQuestion.type" />
+        <span v-if="currentIndex === 10" class="line"></span>
         <MyButtonNext :disabled="!selectedOption" @click="nextQuestion">Далее</MyButtonNext>
     </div>
     <div v-else-if="isCompleted && !showFinalMessage" class="completion-message">
@@ -62,6 +64,13 @@ const handleSelected = (value: string) => {
 </template>
 
 <style scoped>
+.line {
+    height: 4px;
+    background-color: rgba(242, 243, 243, 0.15);
+    width: 100%;
+
+}
+
 .question__container {
     width: 100%;
     display: flex;

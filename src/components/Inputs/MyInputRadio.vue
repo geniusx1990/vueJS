@@ -20,12 +20,18 @@ const handleClick = () => {
 function isNumber(option: string) {
     return !isNaN(Number(option));
 }
+
+function optionLength(option: string) {
+    return option.length > 20;
+}
 </script>
 
 <template>
     <div class="answer" @click="handleClick" :class="{
         selected: props.modelValue === props.option,
-        numberOption: isNumber(props.option) // Добавляем класс если опция - число
+        numberOption: isNumber(props.option),
+        long: optionLength(props.option)
+
     }">
         <input type="radio" :id="option" :value="option" name="drone" @change="handleChange"
             :checked="props.modelValue === props.option" />
@@ -43,6 +49,7 @@ function isNumber(option: string) {
     transition: background-color 0.3s ease;
     padding-left: 35px;
     cursor: pointer;
+    height: 50px;
 }
 
 input[type="radio"] {
@@ -81,5 +88,14 @@ input[type="radio"]:checked {
 .answer.numberOption {
     line-height: 49px;
     height: 40px;
+}
+
+.answer.long {
+    line-height: 20px;
+    height: 78px;
+}
+
+.answer.long .question__label {
+    line-height: 20px;
 }
 </style>
