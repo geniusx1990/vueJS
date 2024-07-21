@@ -19,6 +19,8 @@ const handleSelected = (value: string) => {
     selectedOption.value = value;
     emit('update:selected', value);
 };
+
+
 </script>
 
 <template>
@@ -30,7 +32,7 @@ const handleSelected = (value: string) => {
         <MyInputSquare v-for="(option, index) in props.options" :key="index" :option="option"
             :modelValue="selectedOption" @update:modelValue="handleSelected" />
     </div>
-    <div v-else-if="type === 'numbers'" class="number-boxes">
+    <div v-else class="number-boxes">
         <MyInputNumbers v-for="(option, index) in props.options" :key="index" :option="option"
             :modelValue="selectedOption" @update:modelValue="handleSelected" />
     </div>
@@ -38,6 +40,9 @@ const handleSelected = (value: string) => {
 
 <style scoped>
 .answers {
+    /*     display: flex;
+    flex-direction: column;
+ */
     width: 100%;
 }
 

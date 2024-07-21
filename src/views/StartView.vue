@@ -16,5 +16,6 @@ import { data } from '../utils/constants';
     flex-direction: column;
     color: #ffff;
     align-items: center;
+    height: 91%;
 }
 </style>

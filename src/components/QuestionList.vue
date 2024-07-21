@@ -7,7 +7,6 @@ import QuestionAnswers from './QuestionAnswers.vue';
 import FinalMessage from './FinalMessage.vue';
 import TestCompleted from './TestCompleted.vue';
 import QuestionImage from './QuestionImage.vue';
-import { getImgUrl } from '@/utils/getImage';
 
 const props = defineProps<{
     questions: IQuestion[]
@@ -68,6 +67,8 @@ const handleSelected = (value: string) => {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 96%;
+    justify-content: space-around;
 }
 
 .progress-bar {

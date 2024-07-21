@@ -16,10 +16,17 @@ const handleChange = (event: Event) => {
 const handleClick = () => {
     emit('update:modelValue', props.option);
 };
+
+function isNumber(option: string) {
+    return !isNaN(Number(option));
+}
 </script>
 
 <template>
-    <div class="answer" @click="handleClick" :class="{ selected: props.modelValue === props.option }">
+    <div class="answer" @click="handleClick" :class="{
+        selected: props.modelValue === props.option,
+        numberOption: isNumber(props.option) // Добавляем класс если опция - число
+    }">
         <input type="radio" :id="option" :value="option" name="drone" @change="handleChange"
             :checked="props.modelValue === props.option" />
         <label class="question__label" :for="option">{{ option }}</label>
@@ -29,7 +36,6 @@ const handleClick = () => {
 <style scoped>
 .answer {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background-color: #F2F3F326;
@@ -70,5 +76,10 @@ input[type="radio"]:checked {
 
 .answer.selected {
     background-color: #FFC700;
+}
+
+.answer.numberOption {
+    line-height: 49px;
+    height: 40px;
 }
 </style>
