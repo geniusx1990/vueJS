@@ -62,6 +62,8 @@ const fetchPerson = async () => {
         <p class="done-container__details">Звоните скорее, запись доступна всего</p>
         <p class="done-container__timer">{{ formatTime(timer) }} <span
                 class="done-container__timer__minutes">минут</span></p>
+        <img class="lighting-left" src="../assets/ligthing_4.svg" alt="lighting-left">
+        <img class="lighting-right" src="../assets/lightning_5.svg" alt="lighting-left">
         <button class="done-container__button" @click="fetchPerson">
             <img src="../assets/call.svg" alt="call">
             Позвонить и прослушать результат
@@ -81,7 +83,22 @@ const fetchPerson = async () => {
 </template>
 
 <style scoped>
+.lighting-left {
+    position: absolute;
+    left: 0;
+    top: 323px;
+    z-index: 0;
+}
+
+.lighting-right {
+    position: absolute;
+    right: 0;
+    top: 367px;
+    z-index: 0;
+}
+
 .done-container {
+    position: relative;
     padding: 18px 14px 0px 15px;
     display: flex;
     flex-direction: column;
@@ -179,6 +196,7 @@ const fetchPerson = async () => {
     padding: 33px 22px 14px 15px;
     display: flex;
     border: none;
+    z-index: 22;
 }
 
 .done-container__button img {

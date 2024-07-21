@@ -40,14 +40,12 @@ const handleSelected = (value: string) => {
 
 <style scoped>
 .answers {
-    /*     display: flex;
-    flex-direction: column;
- */
     width: 100%;
 }
 
 .color-boxes {
-    padding: 0px 26px 0px 26px;
+    width: 267px;
+    height: 267px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
