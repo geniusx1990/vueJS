@@ -25,14 +25,14 @@ export interface IPerson {
 }
 
 export const data: IQuestion[] = [
-  { question: 'Ваш пол:', options: ['Мужчина', 'Женщина'], img: null, type: 'text' },
+  /* { question: 'Ваш пол:', options: ['Мужчина', 'Женщина'], img: null, type: 'text' },
   {
     question: 'Укажите ваш возраст:',
     options: ['До 18', 'От 18 до 28', 'От 29 до 35', 'От 36'],
     img: null,
     type: 'text'
-  },
-  {
+  }
+   {
     question: 'Выберите лишнее:',
     options: ['Дом', 'Шалаш', 'Бунгало', 'Скамейка', 'Хижина'],
     img: null,
@@ -87,7 +87,7 @@ export const data: IQuestion[] = [
     options: ['1', '2', '3', '4'],
     img: 'question_image_1.png',
     type: 'numbers'
-  },
+  }, */
   {
     question: 'Вам привычнее и важнее:',
     options: [

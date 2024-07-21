@@ -1,0 +1,74 @@
+<script setup lang="ts">
+const props = defineProps<{
+    option: string;
+    modelValue: string | null;
+}>();
+
+const emit = defineEmits<{
+    (e: 'update:modelValue', value: string): void;
+}>();
+
+const handleChange = (event: Event) => {
+    const target = event.target as HTMLInputElement;
+    emit('update:modelValue', target.value);
+};
+
+const handleClick = () => {
+    emit('update:modelValue', props.option);
+};
+</script>
+
+<template>
+    <div class="answer" @click="handleClick" :class="{ selected: props.modelValue === props.option }">
+        <input type="radio" :id="option" :value="option" name="drone" @change="handleChange"
+            :checked="props.modelValue === props.option" />
+        <label class="question__label" :for="option">{{ option }}</label>
+    </div>
+</template>
+
+<style scoped>
+.answer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F2F3F326;
+    margin-bottom: 8px;
+    transition: background-color 0.3s ease;
+    padding-left: 35px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    border-color: #272727;
+    background-color: #2950C2;
+}
+
+.question__label {
+    display: block;
+    width: 80%;
+    font-family: PT Serif;
+    font-size: 18px;
+    line-height: 58px;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.answer:hover {
+    background-color: var(--vt-c-yellow_second);
+}
+
+.answer.selected {
+    background-color: #FFC700;
+}
+</style>

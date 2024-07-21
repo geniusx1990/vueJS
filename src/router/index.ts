@@ -12,11 +12,6 @@ const router = createRouter({
       path: '/start',
       name: 'start',
       component: () => import('../views/StartView.vue')
-    },
-    {
-      path: '/finish',
-      name: 'finish',
-      component: () => import('../views/FinishView.vue')
     }
   ],
   scrollBehavior(to) {

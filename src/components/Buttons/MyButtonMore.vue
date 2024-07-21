@@ -11,7 +11,7 @@ function redirect() {
 
 <template>
     <button class="mybutton" @click="redirect">
-        <img class="arrow_icon" src="../assets/arrow_icon.svg" alt="test">
+        <img class="arrow_icon" src="../../assets/arrow_icon.svg" alt="test">
     </button>
 </template>
 
