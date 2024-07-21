@@ -37,15 +37,18 @@ const questionClass = computed(() => {
 }
 
 .question__title--default {
-    font-size: 20px;
-    line-height: 25.88px;
+    font-size: 19px;
+    line-height: 24.59px;
+    padding-left: 33px;
+    padding-right: 33px;
+
 }
 
 .question__title--medium {
     font-size: 19px;
     line-height: 31px;
-    padding-left: 41px;
-    padding-right: 41px
+    padding-left: 25px;
+    padding-right: 25px
 }
 
 .question__title--medium-short {
@@ -58,19 +61,19 @@ const questionClass = computed(() => {
 .question__title--long {
     font-size: 18px;
     line-height: 23.29px;
-    padding-left: 35px;
-    padding-right: 35px;
+    padding-left: 11px;
+    padding-right: 11px;
 }
 
 .question__title--extra-long {
     font-size: 16px;
     line-height: 20.7px;
-    padding-left: 62px;
-    padding-right: 62px;
+    padding-left: 41px;
+    padding-right: 41px;
 }
 
 .question__title--extra-extra-long {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 </style>
