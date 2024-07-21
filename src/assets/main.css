@@ -1,0 +1,21 @@
+@import './base.css';
+
+#app {
+  font-weight: normal;
+  background-image: url('../assets/game_background.png');
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+a,
+.green {
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: #f4ce0c;
+  }
+}

@@ -1,0 +1,62 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+import MyButton from './Buttons/MyButton.vue';
+
+export default defineComponent({
+    components: {
+        MyButton,
+    }
+});
+</script>
+
+<template>
+    <div class="details">
+        <div class="details__container">
+            <p class="details__container__text">Также по результатам теста<br>
+                <span class="bold-content">вы получите</span> подробные <span class="bold-content">советы</span> по
+                определению наиболее<br> перспективной <span class="bold-content">для
+                    вашего типа
+                    <span class="lower-case">интеллекта</span> сферы
+                    деятельности,<br></span>
+                которая принесет вам скорейший финансовый результат.
+            </p>
+            <img src="../assets/brain_section_tree.svg" alt="brain">
+            <MyButton title="ПРОЙТИ ТЕСТ" backgroundColor="#FFC700" colorText="#0D0C11" borderLine="none" />
+        </div>
+    </div>
+</template>
+
+<style scoped>
+.details {
+    width: 100%;
+    background: var(--vt-c-white);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.details__container {
+    padding: 38px 11px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details__container__text {
+    font-family: PT Serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    color: var(--vt-c-black-section-three);
+    margin-bottom: 38px;
+}
+
+.bold-content {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.lower-case {
+    text-transform: lowercase;
+    font-weight: 700;
+}
+</style>
