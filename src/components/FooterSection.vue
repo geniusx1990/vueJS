@@ -10,15 +10,15 @@ export default defineComponent({
 </script>
 
 <template>
-    <div class="section_four">
-        <div class="section_four__container">
+    <div class="footer">
+        <div class="footer__container">
             <img class="lightning_left" src="../assets/lightning_left.svg" alt="lightning">
             <img class="lightning_right" src="../assets/lightning_right.svg" alt="lightning">
-            <p class="section_four__container__text">Прохождение теста займет у вас не более <span
+            <p class="footer__container__text">Прохождение теста займет у вас не более <span
                     class="lower-case-yellow">12 минут</span>, а его <span class="white__bold">результаты</span>
                 вы сможете <span class="lower-case-yellow">использовать всю жизнь.</span></p>
-            <div class="section_four__container__rectangle">
-                <p class="section_four__container__rectangle__content">Профессиональная<br> интерпретация и детально
+            <div class="footer__container__rectangle">
+                <p class="footer__container__rectangle__content">Профессиональная<br> интерпретация и детально
                     <span class="lower-case">проработанные<br> рекомендации</span> позволят вам качественно
                     <span class="lower-case">изменить все аспекты своей жизни:</span> от финансового до любовного.
                 </p>
@@ -31,7 +31,7 @@ export default defineComponent({
 </template>
 
 <style scoped>
-.section_four {
+.footer {
     width: 100%;
     background-image: url('../assets/section_four.png');
     background-repeat: no-repeat;
@@ -39,7 +39,7 @@ export default defineComponent({
     height: 533pxs;
 }
 
-.section_four__container {
+.footer__container {
     position: relative;
     padding: 54px 12px 13px;
     display: flex;
@@ -47,14 +47,14 @@ export default defineComponent({
     align-items: center;
 }
 
-.section_four__container__rectangle {
+.footer__container__rectangle {
     background-color: #F3F3F2;
     opacity: 0.8;
     border-radius: 20px;
     margin-bottom: 33px;
 }
 
-.section_four__container__rectangle__content {
+.footer__container__rectangle__content {
     padding: 29px 15px 31px 14px;
     font-family: Merriweather;
     font-size: 16px;
@@ -78,7 +78,7 @@ export default defineComponent({
 
 }
 
-.section_four__container__text {
+.footer__container__text {
     font-family: Merriweather;
     font-size: 15px;
     line-height: 20px;

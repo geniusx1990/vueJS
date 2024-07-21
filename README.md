@@ -1,39 +1,28 @@
-# .
+# Проект: IQ Test Landing Page
 
-This template should help get you started developing with Vue 3 in Vite.
+# Описание
 
-## Recommended IDE Setup
+Этот проект представляет собой лендинг-страницу для тестирования уровня IQ. Страница разработана на основе дизайна из Figma и использует нативный JavaScript или Vue.js для функциональности. Страница является SPA (Single Page Application), то есть все взаимодействие происходит без перезагрузки страницы.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Макет figma: https://www.figma.com/design/mTNXbFPzU5vaAOlEp0np7d/Тест-на-уровень-IQ?node-id=153-4&t=cLWVXLTqXHNPst1w-0
 
-## Type Support for `.vue` Imports in TS
+Технологии:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **HTML**
+- **CSS**
+- **Vue.js**
+- **Typescript**
+- **Vue-router**
 
-## Customize configuration
+deploy на netlify: https://abc-khmialnitski.netlify.app
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Адаптивный дизайн: Лендинг должен корректно отображаться на устройствах с разными разрешениями экрана.
+Футер с текстом на две строки: Текст в футере отображается на две строки, с возможностью увидеть оставшийся текст при скролле окна.
+Запрос на API: После нажатия на кнопку звонка отправляется запрос к API https://swapi.dev/api/people/1/. Полученные данные отображаются под кнопкой в оформленном виде.
 
-## Project Setup
+# Запуск проекта
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- _git clone:_ https://github.com/geniusx1990/vueJS.git
+- _git switch develop_
+- _npm install_
+- _npm run dev_

@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import SectionTwo from '@/components/SectionTwo.vue';
-import SectionOne from '../components/SectionOne.vue'
-import SectionThree from '../components/SectionThree.vue'
-import SectionFour from '../components/SectionFour.vue'
-
+import HeroSection from '../components/HeroSection.vue';
+import Description from '@/components/DescriptionSection.vue';
+import DetailsSection from '../components/DetailsSection.vue';
+import FooterSection from '../components/FooterSection.vue';
 </script>
 
 <template>
   <div class="home">
-    <SectionOne />
-    <SectionTwo id="more" />
-    <SectionThree />
-    <SectionFour />
+    <HeroSection />
+    <Description id="more" />
+    <DetailsSection />
+    <FooterSection />
   </div>
 </template>
 

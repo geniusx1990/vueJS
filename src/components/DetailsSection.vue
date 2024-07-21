@@ -10,9 +10,9 @@ export default defineComponent({
 </script>
 
 <template>
-    <div class="section_tree">
-        <div class="section_tree__container">
-            <p class="section_tree__container__text">Также по результатам теста<br>
+    <div class="details">
+        <div class="details__container">
+            <p class="details__container__text">Также по результатам теста<br>
                 <span class="bold-content">вы получите</span> подробные <span class="bold-content">советы</span> по
                 определению наиболее<br> перспективной <span class="bold-content">для
                     вашего типа
@@ -27,21 +27,21 @@ export default defineComponent({
 </template>
 
 <style scoped>
-.section_tree {
+.details {
     width: 100%;
     background: var(--vt-c-white);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.section_tree__container {
+.details__container {
     padding: 38px 11px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.section_tree__container__text {
+.details__container__text {
     font-family: PT Serif;
     font-size: 16px;
     line-height: 24px;
