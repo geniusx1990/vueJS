@@ -2,11 +2,14 @@
 import QuestionList from '../components/QuestionList.vue';
 import { data } from '../utils/constants';
 
+const props = defineProps<{
+    updateTestStatus: (status: boolean) => void;
+}>();
 </script>
 
 <template>
     <div class="start">
-        <QuestionList :questions="data" />
+        <QuestionList :questions="data" :updateTestStatus="props.updateTestStatus" />
     </div>
 </template>
 

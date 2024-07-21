@@ -9,7 +9,8 @@ import TestCompleted from './TestCompleted.vue';
 import QuestionImage from './QuestionImage.vue';
 
 const props = defineProps<{
-    questions: IQuestion[]
+    questions: IQuestion[];
+    updateTestStatus: (status: boolean) => void;
 }>();
 
 const currentIndex = ref(0);
@@ -29,6 +30,7 @@ const nextQuestion = () => {
         selectedOption.value = null;
     } else {
         isCompleted.value = true;
+        props.updateTestStatus(true);
         console.log('Конец опроса');
         setTimeout(() => {
             showFinalMessage.value = true;

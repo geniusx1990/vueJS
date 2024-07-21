@@ -2,35 +2,36 @@
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router';
 
-const isOpen = ref(false)
-const route = useRoute()
+const props = defineProps<{
+    isTestCompleted: boolean;
+}>();
+
+const isOpen = ref(false);
+const route = useRoute();
 
 const toggleMenu = () => {
-    isOpen.value = !isOpen.value
-}
+    isOpen.value = !isOpen.value;
+};
 
 const closeMenu = () => {
-    isOpen.value = false
-}
+    isOpen.value = false;
+};
 
-
-const isStartPage = computed(() => route.path === '/start')
-const isFinishedPage = computed(() => route.path === '/finish')
+const isStartPage = computed(() => route.path === '/start');
 
 const headerTitle = computed(() =>
-    isFinishedPage.value ? 'ГОТОВО!' : 'ТЕСТ НА ОПРЕДЕЛЕНИЕ IQ'
+    props.isTestCompleted ? 'ГОТОВО!' : 'ТЕСТ НА ОПРЕДЕЛЕНИЕ IQ'
 );
 
 const headerTitleClass = computed(() =>
-    isFinishedPage.value ? 'header__title--finished' : 'header__title--default'
+    props.isTestCompleted ? 'header__title--finished' : 'header__title--default'
 );
-
-
 </script>
+
 
 <template>
     <header class="header">
-        <div v-if="isStartPage || isFinishedPage" class="header__test_title_container" :class="{ open: isOpen }">
+        <div v-if="isStartPage || props.isTestCompleted" class="header__test_title_container" :class="{ open: isOpen }">
             <img src="../assets/brain.svg" alt="brain" width="48px" height="47px">
             <h1 :class="['header__title', headerTitleClass]">{{ headerTitle }}</h1>
         </div>
@@ -191,12 +192,11 @@ nav.open {
 }
 
 .header__title--finished {
-    background-color: red;
-    margin-left: 24px;
+    font-family: Yeseva One;
     font-size: 20px;
     line-height: 23.1px;
     letter-spacing: 0.1em;
-
+    margin-left: 24px;
 }
 
 @media (max-width: 1014px) {
